@@ -4,7 +4,7 @@ import { ElMessage } from 'element-plus'
 
 // 创建 axios 实例
 const service: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || '',
+  baseURL: '/api',
   timeout: 15000,
 })
 
@@ -30,7 +30,7 @@ service.interceptors.response.use(
       return Promise.reject(new Error(res.message || '请求失败'))
     }
 
-    return res.data
+    return res
   },
   (error) => {
     ElMessage.error(error.message || '请求失败')

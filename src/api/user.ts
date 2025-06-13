@@ -13,7 +13,7 @@ interface LoginData {
 
 export const register = (data: RegisterData) => {
   return request({
-    url: '/api/user/register',
+    url: '/user/register',
     method: 'post',
     data,
   })
@@ -21,7 +21,7 @@ export const register = (data: RegisterData) => {
 
 export const login = (data: LoginData) => {
   return request({
-    url: '/api/user/login',
+    url: '/user/login',
     method: 'post',
     data,
   }).then((res) => res.data as LoginResponse)
